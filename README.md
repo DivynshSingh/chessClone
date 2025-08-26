@@ -1,5 +1,4 @@
-text
-# ChessClone
+# Online Chess Platform
 
 An **online multiplayer chess platform** built with **TypeScript**, **React (Vite)**, and a WebSocket backend. This project enables real-time chess games played in the browser, paired dynamically via WebSocket connections.
 
@@ -42,54 +41,13 @@ An **online multiplayer chess platform** built with **TypeScript**, **React (Vit
 - Tailwind CSS classes provide styling
 
 ---
+### Some Visuals
 
-## Getting Started
+![Alt text](<front_end/public/Screenshot 2025-08-27 024746.png>)
 
-### Prerequisites
+![Alt text](<front_end/public/Screenshot 2025-08-27 024756.png>)
 
-- Node.js installed (v16+ recommended)
-- npm or yarn package manager
+![Alt text](<front_end/public/Screenshot 2025-08-27 025011.png>)
 
-### Setup Backend
-
-cd backend
-npm install
-node server.js # or ts-node if TypeScript used directly
-
-text
-
-### Setup Frontend
-
-cd frontend
-npm install
-npm run dev
-
-
-## Code Structure
-
-/backend
-
-server.ts (WebSocket server and GameManager logic)
-
-Game.ts (Individual game instance and chess rules)
-/frontend
-
-src/
-
-App.tsx (router for landing & game screens)
-
-screens/
-
-Landing.tsx
-
-Game.tsx (game UI, socket hooks, chessboard)
-
-components/
-
-ChessBoard.tsx (board and interactive piece movement)
-
-MovesList.tsx (move history display)
-
-hooks/
-
-useSocket.ts (WebSocket connection management)
+![Alt text](<front_end/public/Screenshot 2025-08-27 025203.png>)
+  
