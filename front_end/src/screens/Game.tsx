@@ -5,7 +5,7 @@ import { MovesList } from "../components/movesList";
 import { useSocket } from "../hooks/useSocket";
 import { useEffect, useState } from "react";
 import { colors } from "../styles/colors";
-import knightLogo from "../assets/knightlogo.png";
+import knightLogo from "../assets/knightLogo.png";
 
 
 export const INIT_GAME = "init_game";

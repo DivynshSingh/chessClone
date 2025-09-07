@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { colors } from "../styles/colors";
-import knightLogo from "../assets/knightlogo.png";
+import knightLogo from "../assets/knightLogo.png";
 
 export const Landing = () => {
   const navigate = useNavigate();
