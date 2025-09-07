@@ -62,7 +62,7 @@ export const Game = () => {
 
   // Cooldown timer effect
   useEffect(() => {
-    let timer: NodeJS.Timeout;
+    let timer: any;
     if (cooldown > 0) {
       timer = setTimeout(() => {
         setCooldown(cooldown - 1);
