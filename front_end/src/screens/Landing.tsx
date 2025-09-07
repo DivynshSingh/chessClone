@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../components/Button";
 import { colors } from "../styles/colors";
+import knightLogo from "../assets/knightlogo.png";
 
 export const Landing = () => {
   const navigate = useNavigate();
@@ -23,11 +24,11 @@ export const Landing = () => {
         className="px-8 py-4 flex justify-between items-center border-black sticky top-0"
         style={{ backgroundColor: colors.NavbgMain }}
       > 
-        <div
-          className="text-2xl font-extrabold"
-          style={{ color: colors.primary }}
-        >
-          ♟️ ChessZone
+      <div className="flex items-center gap-2">
+          <img src={knightLogo} alt="Knight Logo" className="h-10 w-10 object-contain" />
+          <div className="text-2xl font-bold" style={{ color: colors.primary }}>
+            ChessZone
+          </div>
         </div>
         <div className="hidden md:flex space-x-6 text-sm font-medium">
           <a href="#features" style={{ color: colors.textSecondary }}>

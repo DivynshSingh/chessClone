@@ -5,6 +5,8 @@ import { MovesList } from "../components/movesList";
 import { useSocket } from "../hooks/useSocket";
 import { useEffect, useState } from "react";
 import { colors } from "../styles/colors";
+import knightLogo from "../assets/knightlogo.png";
+
 
 export const INIT_GAME = "init_game";
 export const MOVE = "move";
@@ -17,6 +19,7 @@ export const Game = () => {
   const [chess, setChess] = useState(new Chess());
   const [board, setBoard] = useState(chess.board());
   const [start, setStart] = useState(false);
+  const [color, setColor] = useState(true);
   const [moves, setMoves] = useState<MoveData[]>([]);
   const [winner, setWinner] = useState<string | null>(null);
   const [cooldown, setCooldown] = useState(0);
@@ -30,6 +33,9 @@ export const Game = () => {
         case INIT_GAME:
           setBoard(chess.board());
           setStart(true);
+          if(message.payload==="black"){
+            setColor(false);
+          }
           break;
         case MOVE:
           chess.move(message.move);
@@ -43,6 +49,16 @@ export const Game = () => {
       }
     };
   }, [socket]);
+
+
+
+  useEffect(() => {
+    if (start) {
+      chess.reset();
+      setMoves([]);
+      setBoard(chess.board());
+    }
+  }, [start]);
 
   // Cooldown timer effect
   useEffect(() => {
@@ -90,8 +106,11 @@ export const Game = () => {
         className="w-full px-6 py-4 flex justify-between items-center shadow"
         style={{ backgroundColor: colors.bgPanel }}
       >
-        <div className="text-2xl font-bold" style={{ color: colors.primary }}>
-          ♟️ ChessZone
+      <div className="flex items-center gap-2">
+          <img src={knightLogo} alt="Knight Logo" className="h-10 w-10 object-contains"/>
+          <div className="text-2xl font-bold" style={{ color: colors.primary }}>
+            ChessZone
+          </div>
         </div>
         <div className="text-sm" style={{ color: colors.textSecondary }}>
           Logged in as Guest
@@ -109,6 +128,7 @@ export const Game = () => {
               setMoves={setMoves}
               socket={socket}
               board={board}
+              color={color}
             />
           </div>
 
