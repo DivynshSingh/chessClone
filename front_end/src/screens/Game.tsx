@@ -16,7 +16,7 @@ export type MoveData = { from: string; to: string };
 
 export const Game = () => {
   const socket = useSocket();
-  const [chess, setChess] = useState(new Chess());
+  const [chess, _] = useState(new Chess());
   const [board, setBoard] = useState(chess.board());
   const [start, setStart] = useState(false);
   const [color, setColor] = useState(true);
