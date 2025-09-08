@@ -20,7 +20,8 @@ An **online multiplayer chess platform** built with **TypeScript**, **React (Vit
 
 ### Backend
 
-- Uses `ws` WebSocket library to handle client connections on port `8080`
+- Uses `ws` WebSocket library to handle client connections
+- Backend hosted on render
 - `GameManager` class pairs users ready to play and manages active games
 - Each `Game` instance represents a chess match between two clients
 - Chess rules and move validation handled with the `chess.js` library
